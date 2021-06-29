@@ -21,7 +21,10 @@ public class VRProviderLoader implements ViaPlatformLoader
             public int getClosestServerProtocol(UserConnection connection) throws Exception
             {
                 if (connection.isClientSide())
+                {
                     return ViaMCP.getInstance().getVersion();
+                }
+
                 return super.getClosestServerProtocol(connection);
             }
         });

@@ -19,7 +19,6 @@ public class NettyUtil
 
                 break;
             }
-
             case "encoder":
             {
                 if (instance.get(CommonTransformer.HANDLER_ENCODER_NAME) != null)

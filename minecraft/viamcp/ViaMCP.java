@@ -31,11 +31,11 @@ public class ViaMCP
         return instance;
     }
 
-    private final Logger jLogger = new JLoggerToLog4j(LogManager.getLogger("ViaForge"));
-    private final CompletableFuture<Void> initFuture = new CompletableFuture<>();
+    private final Logger jLogger = new JLoggerToLog4j(LogManager.getLogger("ViaMCP"));
+    private final CompletableFuture<Void> INIT_FUTURE = new CompletableFuture<>();
 
-    private ExecutorService asyncExecutor;
-    private EventLoop eventLoop;
+    private ExecutorService ASYNC_EXEC;
+    private EventLoop EVENT_LOOP;
 
     private File file;
     private int version;
@@ -44,10 +44,10 @@ public class ViaMCP
     public void start()
     {
         ThreadFactory factory = new ThreadFactoryBuilder().setDaemon(true).setNameFormat("ViaMCP-%d").build();
-        asyncExecutor = Executors.newFixedThreadPool(8, factory);
+        ASYNC_EXEC = Executors.newFixedThreadPool(8, factory);
 
-        eventLoop = new LocalEventLoopGroup(1, factory).next();
-        eventLoop.submit(initFuture::join);
+        EVENT_LOOP = new LocalEventLoopGroup(1, factory).next();
+        EVENT_LOOP.submit(INIT_FUTURE::join);
 
         setVersion(PROTOCOL_VERSION);
         this.file = new File("ViaMCP");
@@ -64,7 +64,7 @@ public class ViaMCP
         new VRBackwardsLoader(file);
         new VRRewindLoader(file);
 
-        initFuture.complete(null);
+        INIT_FUTURE.complete(null);
     }
 
     public Logger getjLogger()
@@ -74,17 +74,17 @@ public class ViaMCP
 
     public CompletableFuture<Void> getInitFuture()
     {
-        return initFuture;
+        return INIT_FUTURE;
     }
 
     public ExecutorService getAsyncExecutor()
     {
-        return asyncExecutor;
+        return ASYNC_EXEC;
     }
 
     public EventLoop getEventLoop()
     {
-        return eventLoop;
+        return EVENT_LOOP;
     }
 
     public File getFile()

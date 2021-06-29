@@ -5,7 +5,7 @@ import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 public enum ProtocolCollection
 {
     /* 1.17.x */
-    R1_17_1_PRE_1(new ProtocolVersion(0x40000024, "1.17.1 (Currently Unsupported)")),
+    R1_17_1(new ProtocolVersion(756, 37, "1.17.1", null)),
     R1_17(new ProtocolVersion(755, "1.17")),
 
     /* 1.16.x */

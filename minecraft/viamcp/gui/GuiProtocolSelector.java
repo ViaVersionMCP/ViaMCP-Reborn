@@ -53,7 +53,7 @@ public class GuiProtocolSelector extends GuiScreen
         list.drawScreen(p_drawScreen_1_, p_drawScreen_2_, p_drawScreen_3_);
         GL11.glPushMatrix();
         GL11.glScalef(2.0F, 2.0F, 2.0F);
-        this.drawCenteredString(this.fontRendererObj, EnumChatFormatting.GOLD + (EnumChatFormatting.BOLD + "ViaMCP Reborn"), this.width / 4, 6, 16777215);
+        this.drawCenteredString(this.fontRendererObj, EnumChatFormatting.BOLD + "ViaMCP Reborn", this.width / 4, 6, 16777215);
         GL11.glPopMatrix();
         drawString(this.fontRendererObj, "Maintained by Hideri", 3, 3, -1);
         drawString(this.fontRendererObj, "Discord: Hideri#9003", 3, 13, -1);
