@@ -53,11 +53,6 @@ public enum ProtocolCollection
     /* 1.8.x */
     R1_8(new ProtocolVersion(47, "1.8.x")),
 
-    /* 1.7.x */
-    R1_7_6(new ProtocolVersion(5, "1.7.6-1.7.10 (May Not Work)")),
-    R1_7_2(new ProtocolVersion(4, "1.7.2-1.7.5 (May Not Work)")),
-    R1_7(new ProtocolVersion(3, "1.7-1.7.1 (May Not Work)"));
-
     private ProtocolVersion version;
 
     private ProtocolCollection(ProtocolVersion version)
