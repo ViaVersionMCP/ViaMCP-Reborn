@@ -1,11 +1,12 @@
 package viamcp.protocols;
 
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
+import com.viaversion.viaversion.api.protocol.version.VersionRange;
 
 public enum ProtocolCollection
 {
     /* 1.17.x */
-    R1_17_1(new ProtocolVersion(756, 39, "1.17.1", null)),
+    R1_17_1(new ProtocolVersion(756, "1.17.1")),
     R1_17(new ProtocolVersion(755, "1.17")),
 
     /* 1.16.x */
@@ -54,9 +55,8 @@ public enum ProtocolCollection
     R1_8(new ProtocolVersion(47, "1.8.x")),
 
     /* 1.7.x */
-    R1_7_6(new ProtocolVersion(5, "1.7.6-1.7.10 (May Not Work)")),
-    R1_7_2(new ProtocolVersion(4, "1.7.2-1.7.5 (May Not Work)")),
-    R1_7(new ProtocolVersion(3, "1.7-1.7.1 (May Not Work)"));
+    R1_7_6(new ProtocolVersion(5, -1, "1.7.6-1.7.10 (May Not Work)", new VersionRange("1.7", 6, 10))),
+    R1_7(new ProtocolVersion(4, -1, "1.7-1.7.5 (May Not Work)", new VersionRange("1.7", 0, 5)));
 
     private ProtocolVersion version;
 
