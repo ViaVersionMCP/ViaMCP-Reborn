@@ -4,7 +4,7 @@ Repository to keep up with ViaVersion on MCP (Originally from https://github.com
 # 1.7.x Protocols
 Yes, i know they are not working right now, do not make a pull request to remove them, as i am not going to remove them.
 
-# Installation / Intergation
+# Installation
 You will need to add some lines of code before you can use ViaMCP
 
 You also need to add libraries into dependencies before using this!
