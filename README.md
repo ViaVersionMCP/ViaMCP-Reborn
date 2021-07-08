@@ -4,6 +4,10 @@ Repository to keep up with ViaVersion on MCP (Originally from https://github.com
 # 1.7.x Protocols
 Yes, i know they are not working right now, do not make a pull request to remove them, as i am not going to remove them.
 
+# Small note about version
+If you are using 1.8.x as a client base, use viamcp src folder
+If you are using 1.12.2 as a client base, use viamcp1_12 src folder
+
 # Installation
 You will need to add some lines of code before you can use ViaMCP
 
