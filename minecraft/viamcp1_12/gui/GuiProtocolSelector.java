@@ -4,7 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiSlot;
-import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.text.TextFormatting;
 import org.lwjgl.opengl.GL11;
 import viamcp.ViaMCP;
 import viamcp.protocols.ProtocolCollection;
@@ -53,9 +53,9 @@ public class GuiProtocolSelector extends GuiScreen
         list.drawScreen(p_drawScreen_1_, p_drawScreen_2_, p_drawScreen_3_);
         GL11.glPushMatrix();
         GL11.glScalef(2.0F, 2.0F, 2.0F);
-        this.drawCenteredString(this.fontRendererObj, EnumChatFormatting.BOLD + "ViaMCP Reborn", this.width / 4, 6, 16777215);
+        this.drawCenteredString(this.fontRendererObj, TextFormatting.BOLD + "ViaMCP Reborn", this.width / 4, 6, 16777215); // You can use either ChatFormatting (Realms) or TextFormatting (Default), They both work the same.
         GL11.glPopMatrix();
-        drawString(this.fontRendererObj, "Maintained by Hideri (1.8.x Version)", 3, 3, -1);
+        drawString(this.fontRendererObj, "Maintained by Hideri (1.12.2 Version)", 3, 3, -1);
         drawString(this.fontRendererObj, "Discord: Hideri#9003", 3, 13, -1);
         drawString(this.fontRendererObj, "Credits", 3, this.height - 30, -1);
         drawString(this.fontRendererObj, "ViaForge: https://github.com/FlorianMichael/ViaForge", 3, this.height - 20, -1);
@@ -95,9 +95,9 @@ public class GuiProtocolSelector extends GuiScreen
         }
 
         @Override
-        protected void drawSlot(int i, int i1, int i2, int i3, int i4, int i5)
+        protected void func_192637_a(int p_192637_1_, int p_192637_2_, int p_192637_3_, int p_192637_4_, int p_192637_5_, int p_192637_6_, float p_192637_7_)
         {
-            drawCenteredString(mc.fontRendererObj,(ViaMCP.getInstance().getVersion() == ProtocolCollection.values()[i].getVersion().getVersion() ? EnumChatFormatting.GREEN.toString() + EnumChatFormatting.BOLD : EnumChatFormatting.GRAY.toString()) + ProtocolCollection.getProtocolById(ProtocolCollection.values()[i].getVersion().getVersion()).getName(), width / 2, i2 + 2, -1);
+            drawCenteredString(mc.fontRendererObj,(ViaMCP.getInstance().getVersion() == ProtocolCollection.values()[p_192637_1_].getVersion().getVersion() ? TextFormatting.GREEN.toString() + TextFormatting.BOLD : TextFormatting.GRAY.toString()) + ProtocolCollection.getProtocolById(ProtocolCollection.values()[p_192637_1_].getVersion().getVersion()).getName(), width / 2, p_192637_3_ + 2, -1); // Same here. You can use either ChatFormatting (Realms) or TextFormatting (Default), They both work the same.
         }
     }
 }
