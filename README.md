@@ -1,6 +1,8 @@
 # ViaMCP-Reborn
 Repository to keep up with ViaVersion on MCP (Originally from https://github.com/LaVache-FR/ViaMCP)
 
+I have been requested (held at gun point) to also add credits to ViaForge in the README: https://github.com/FlorianMichael/ViaForge
+
 # 1.7.x Protocols
 Yes, i know they are not working right now, do not make a pull request to remove them, as i am not going to remove them.
 
