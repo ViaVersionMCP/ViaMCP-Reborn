@@ -1,7 +1,9 @@
-# ViaMCP-Reborn
+# ViaMCP Reborn
 Repository to keep up with ViaVersion on MCP (Originally from https://github.com/LaVache-FR/ViaMCP)
 
 I have been requested (held at gun point) to also add credits to ViaForge in the README: https://github.com/FlorianMichael/ViaForge
+
+Exporting: [Click Me](https://github.com/Foreheadchann/ViaMCP-Reborn/blob/main/README.md#exporting-without-jar-files)
 
 # 1.7.x Protocols
 Yes, i know they are not working right now, do not make a pull request to remove them, as i am not going to remove them.
@@ -103,6 +105,28 @@ if (button.id == 69)
   this.mc.displayGuiScreen(new GuiProtocolSelector(this));
 }
 ```
+
+# Exporting Without JAR Files
+
+- This should fix most peoples issues with dependencies (usually NoClassDefFoundError or ClassNotFoundException)
+
+1: First export your client normaly
+
+2: Open your client .jar file with archive program (winrar or 7zip for example)
+
+3: Also open all libraries with archive program (ViaBackwards, ViaRewind, ViaSnakeYml and ViaVersion)
+
+4: From ViaBackwards drag and drop to your client .jar folders: **assets** and **com**
+
+5: From ViaBackwards drag **assets** and **de** folders
+
+6: From ViaSnakeYaml **org** folder
+
+7: And from ViaVersion drag and drop **assets**, **com** and **us** directories
+
+8: Then save and close, now your client should work good ;)
+
+Credits: mordolpl (Discord)
 
 # Finishing
 You should now be able to use ViaMCP
