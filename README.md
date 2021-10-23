@@ -116,13 +116,13 @@ if (button.id == 69)
 
 3: Also open all libraries with archive program (ViaBackwards, ViaRewind, ViaSnakeYml and ViaVersion)
 
-4: From ViaBackwards drag and drop to your client .jar folders: **assets** and **com**
+4: From ViaBackwards drag and drop to your client .jar folders: ``assets`` and ``com``
 
-5: From ViaBackwards drag **assets** and **de** folders
+5: From ViaBackwards drag ``assets`` and ``de`` folders
 
-6: From ViaSnakeYaml **org** folder
+6: From ViaSnakeYaml ``org`` folder
 
-7: And from ViaVersion drag and drop **assets**, **com** and **us** directories
+7: And from ViaVersion drag and drop ``assets``, ``com`` and ``us`` directories
 
 8: Then save and close, now your client should work good ;)
 
