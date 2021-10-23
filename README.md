@@ -3,7 +3,7 @@ Repository to keep up with ViaVersion on MCP (Originally from https://github.com
 
 I have been requested (held at gun point) to also add credits to ViaForge in the README: https://github.com/FlorianMichael/ViaForge
 
-Exporting: [Click Me](https://github.com/Foreheadchann/ViaMCP-Reborn/blob/main/README.md#exporting-without-jar-files)
+Exporting: [Click Me](https://github.com/Foreheadchann/ViaMCP-Reborn#exporting-without-jar-files)
 
 # 1.7.x Protocols
 Yes, i know they are not working right now, do not make a pull request to remove them, as i am not going to remove them.
