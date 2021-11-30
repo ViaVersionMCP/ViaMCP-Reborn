@@ -56,9 +56,9 @@ Add:
 ```java
 if (p_initChannel_1_ instanceof SocketChannel && ViaMCP.getInstance().getVersion() != ViaMCP.PROTOCOL_VERSION)
 {
-  UserConnection user = new UserConnectionImpl(p_initChannel_1_, true);
-  new ProtocolPipelineImpl(user);
-  p_initChannel_1_.pipeline().addBefore("encoder", CommonTransformer.HANDLER_ENCODER_NAME, new VREncodeHandler(user)).addBefore("decoder", CommonTransformer.HANDLER_DECODER_NAME, new VRDecodeHandler(user));
+    UserConnection user = new UserConnectionImpl(p_initChannel_1_, true);
+    new ProtocolPipelineImpl(user);
+    p_initChannel_1_.pipeline().addBefore("encoder", CommonTransformer.HANDLER_ENCODER_NAME, new MCPEncodeHandler(user)).addBefore("decoder", CommonTransformer.HANDLER_DECODER_NAME, new MCPDecodeHandler(user));
 }
 ```
 
