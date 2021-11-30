@@ -7,11 +7,6 @@ import com.viaversion.viaversion.api.data.MappingDataLoader;
 import io.netty.channel.EventLoop;
 import io.netty.channel.local.LocalEventLoopGroup;
 import org.apache.logging.log4j.LogManager;
-import viamcp.loader.VRBackwardsLoader;
-import viamcp.loader.VRProviderLoader;
-import viamcp.loader.VRRewindLoader;
-import viamcp.platform.VRInjector;
-import viamcp.platform.VRPlatform;
 import viamcp.utils.JLoggerToLog4j;
 
 import java.io.File;
@@ -56,13 +51,13 @@ public class ViaMCP
             this.getjLogger().info("Creating ViaMCP Folder");
         }
 
-        Via.init(ViaManagerImpl.builder().injector(new VRInjector()).loader(new VRProviderLoader()).platform(new VRPlatform(file)).build());
+        Via.init(ViaManagerImpl.builder().injector(new viamcp.platform.MCPViaInjector()).loader(new viamcp.loader.MCPProviderLoader()).platform(new viamcp.platform.MCPViaPlatform(file)).build());
 
         MappingDataLoader.enableMappingsCache();
         ((ViaManagerImpl) Via.getManager()).init();
 
-        new VRBackwardsLoader(file);
-        new VRRewindLoader(file);
+        new viamcp.loader.MCPBackwardsLoader(file);
+        new viamcp.loader.MCPRewindLoader(file);
 
         INIT_FUTURE.complete(null);
     }
