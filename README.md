@@ -109,7 +109,7 @@ if (button.id == 69)
 # Version Slider
 You can also use a version slider to control ViaMCP versions
 
-```
+```java
 this.buttonList.add(new VersionSlider(420, x, y, width (min. 110), height));
 ```
 
