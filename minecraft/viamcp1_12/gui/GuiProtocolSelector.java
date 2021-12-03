@@ -16,6 +16,8 @@ import java.io.IOException;
 
 public class GuiProtocolSelector extends GuiScreen
 {
+    public static float sliderDragValue = -1.0f;
+
     private GuiScreen parent;
     public SlotList list;
 

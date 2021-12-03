@@ -66,7 +66,7 @@ public class MCPViaPlatform implements ViaPlatform<UUID>
     @Override
     public String getPluginVersion()
     {
-        return "4.1.0";
+        return "4.1.1";
     }
 
     @Override

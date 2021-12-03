@@ -40,8 +40,8 @@ public class MCPViaPlatform implements ViaPlatform<UUID>
         api = new MCPViaAPI();
     }
 
-    public static String legacyToJson(String legacy) {
-        
+    public static String legacyToJson(String legacy)
+    {
         return GsonComponentSerializer.gson().serialize(LegacyComponentSerializer.legacySection().deserialize(legacy));
     }
 
@@ -54,7 +54,7 @@ public class MCPViaPlatform implements ViaPlatform<UUID>
     @Override
     public String getPlatformName()
     {
-        return "ViaForge";
+        return "ViaMCP";
     }
 
     @Override
@@ -66,7 +66,7 @@ public class MCPViaPlatform implements ViaPlatform<UUID>
     @Override
     public String getPluginVersion()
     {
-        return "4.0.0";
+        return "4.1.1";
     }
 
     @Override
@@ -78,6 +78,7 @@ public class MCPViaPlatform implements ViaPlatform<UUID>
                 {
                     throwable.printStackTrace();
                 }
+
                 return null;
             })
         );
@@ -168,7 +169,7 @@ public class MCPViaPlatform implements ViaPlatform<UUID>
     @Override
     public void onReload()
     {
-        // Totally useful
+        logger.info("ViaVersion was reloaded? (How did that happen)");
     }
 
     @Override

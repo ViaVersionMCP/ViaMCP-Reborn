@@ -6,7 +6,6 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiSlot;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.EnumChatFormatting;
-import org.lwjgl.opengl.GL11;
 import viamcp.ViaMCP;
 import viamcp.protocols.ProtocolCollection;
 
@@ -14,6 +13,8 @@ import java.io.IOException;
 
 public class GuiProtocolSelector extends GuiScreen
 {
+    public static float sliderDragValue = -1.0f;
+
     private GuiScreen parent;
     public SlotList list;
 
