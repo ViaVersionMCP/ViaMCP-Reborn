@@ -89,7 +89,7 @@ NettyUtil.decodeEncodePlacement(channel.pipeline(), "encoder", "compress", new N
 ```
 
 # GuiMainMenu
-You will need to add a button to access the protocol switcher
+You will need to add a button to access the protocol switcher (or alternatively use the version slider under this section)
 
 In addSingleplayerMultiplayerButtons() function you will need to add the following code:
 
@@ -104,6 +104,13 @@ if (button.id == 69)
 {
   this.mc.displayGuiScreen(new GuiProtocolSelector(this));
 }
+```
+
+# Version Slider
+You can also use a version slider to control ViaMCP versions
+
+```java
+this.buttonList.add(new VersionSlider(420, x, y, width (min. 110), height));
 ```
 
 # Exporting Without JAR Files
