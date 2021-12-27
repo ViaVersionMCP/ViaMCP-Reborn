@@ -6,7 +6,7 @@ import com.viaversion.viaversion.api.protocol.version.VersionRange;
 public enum ProtocolCollection
 {
     /* 1.18.x */
-    R1_18(new ProtocolVersion(757, "1.18")),
+    R1_18(new ProtocolVersion(757, "1.18.x")), // 1.18.1 did not have a new protocol added, so it uses the same option for it
 
     /* 1.17.x */
     R1_17_1(new ProtocolVersion(756, "1.17.1")),
