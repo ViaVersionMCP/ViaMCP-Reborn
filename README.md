@@ -138,7 +138,7 @@ this.buttonList.add(new VersionSlider(420, x, y, width (min. 110), height));
 
 4: From ViaBackwards drag and drop to your client .jar folders: ``assets`` and ``com``
 
-5: From ViaBackwards drag ``assets`` and ``de`` folders
+5: From ViaRewind drag ``assets`` and ``de`` folders
 
 6: From ViaSnakeYaml ``org`` folder
 
