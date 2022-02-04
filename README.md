@@ -3,7 +3,7 @@ Repository to keep up with ViaVersion on MCP (Originally from https://github.com
 
 I have been requested (held at gun point) to also add credits to ViaForge in the README: https://github.com/FlorianMichael/ViaForge
 
-Exporting: [Click Me](https://github.com/Foreheadchann/ViaMCP-Reborn#exporting-without-jar-files)
+# [Exporting without needing ViaMCP in JSON](https://github.com/Foreheadchann/ViaMCP-Reborn#exporting-without-jar-files)
 
 # 1.7.x Protocols
 Yes, i know they are not working right now, do not make a pull request to remove them, as i am not going to remove them.
@@ -33,7 +33,7 @@ catch (Exception e)
 ```
 
 # NetworkManager
-You will need to replace 2 functions in NetworkManager.java
+You will need to change 2 functions in NetworkManager.java
 
 1: (Name may vary, but should be func_181124_a or contain (Bootstrap)((Bootstrap)((Bootstrap)(new Bootstrap()).group((EventLoopGroup)lazyloadbase.getValue()))
 
@@ -54,6 +54,19 @@ p_initChannel_1_.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLa
 Add: 
 
 ```java
+if (p_initChannel_1_ instanceof SocketChannel && ViaMCP.getInstance().getVersion() != ViaMCP.PROTOCOL_VERSION)
+{
+    UserConnection user = new UserConnectionImpl(p_initChannel_1_, true);
+    new ProtocolPipelineImpl(user);
+    p_initChannel_1_.pipeline().addBefore("encoder", CommonTransformer.HANDLER_ENCODER_NAME, new MCPEncodeHandler(user)).addBefore("decoder", CommonTransformer.HANDLER_DECODER_NAME, new MCPDecodeHandler(user));
+}
+```
+
+Which should after look like this (1.8.x for example):
+
+```java
+p_initChannel_1_.pipeline().addLast((String)"timeout", (ChannelHandler)(new ReadTimeoutHandler(30))).addLast((String)"splitter", (ChannelHandler)(new MessageDeserializer2())).addLast((String)"decoder", (ChannelHandler)(new MessageDeserializer(EnumPacketDirection.CLIENTBOUND))).addLast((String)"prepender", (ChannelHandler)(new MessageSerializer2())).addLast((String)"encoder", (ChannelHandler)(new MessageSerializer(EnumPacketDirection.SERVERBOUND))).addLast((String)"packet_handler", (ChannelHandler)networkmanager);
+
 if (p_initChannel_1_ instanceof SocketChannel && ViaMCP.getInstance().getVersion() != ViaMCP.PROTOCOL_VERSION)
 {
     UserConnection user = new UserConnectionImpl(p_initChannel_1_, true);
@@ -125,7 +138,7 @@ this.buttonList.add(new VersionSlider(420, x, y, width (min. 110), height));
 
 4: From ViaBackwards drag and drop to your client .jar folders: ``assets`` and ``com``
 
-5: From ViaBackwards drag ``assets`` and ``de`` folders
+5: From ViaRewind drag ``assets`` and ``de`` folders
 
 6: From ViaSnakeYaml ``org`` folder
 
