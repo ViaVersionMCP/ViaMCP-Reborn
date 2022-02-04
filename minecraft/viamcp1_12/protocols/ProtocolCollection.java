@@ -6,12 +6,8 @@ import com.viaversion.viaversion.api.protocol.version.VersionRange;
 public enum ProtocolCollection
 {
     /* 1.18.x */
-<<<<<<< HEAD
     R1_18_2(new ProtocolVersion(758, 66, "1.18.2 (Snapshot)", null), ProtocolInfoCollection.R1_18_2),
-    R1_18(new ProtocolVersion(757, -1, "1.18-1.18.1", new VersionRange("1.18", 0, 1)), ProtocolInfoCollection.R1_18), // 1.18.1 did not have a new protocol added, so it uses the same option for it
-=======
-    R1_18(new ProtocolVersion(757, "1.18.x")), // 1.18.1 did not have a new protocol added, so it uses the same option for it
->>>>>>> 7d7dfded8fda9fad489ac8c5b451a538a99f6d94
+    R1_18(new ProtocolVersion(757, -1, "1.18-1.18.1", new VersionRange("1.18", 0, 1)), ProtocolInfoCollection.R1_18),
 
     /* 1.17.x */
     R1_17_1(new ProtocolVersion(756, "1.17.1"), ProtocolInfoCollection.R1_17_1),
