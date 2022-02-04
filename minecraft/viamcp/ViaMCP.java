@@ -7,6 +7,7 @@ import com.viaversion.viaversion.api.data.MappingDataLoader;
 import io.netty.channel.EventLoop;
 import io.netty.channel.local.LocalEventLoopGroup;
 import org.apache.logging.log4j.LogManager;
+import viamcp.gui.AsyncVersionSlider;
 import viamcp.loader.MCPBackwardsLoader;
 import viamcp.loader.MCPViaLoader;
 import viamcp.loader.MCPRewindLoader;
@@ -41,6 +42,12 @@ public class ViaMCP
     private int version;
     private String lastServer;
 
+    /**
+     * Version Slider that works Asynchronously with the Version GUI
+     * Please initialize this before usage with initAsyncSlider() or initAsyncSlider(x, y, width (min. 110), height)
+     */
+    public AsyncVersionSlider asyncSlider;
+
     public void start()
     {
         ThreadFactory factory = new ThreadFactoryBuilder().setDaemon(true).setNameFormat("ViaMCP-%d").build();
@@ -65,6 +72,16 @@ public class ViaMCP
         new MCPRewindLoader(file);
 
         INIT_FUTURE.complete(null);
+    }
+
+    public void initAsyncSlider()
+    {
+        asyncSlider = new AsyncVersionSlider(-1, 5, 5, 110, 20);
+    }
+
+    public void initAsyncSlider(int x, int y, int width, int height)
+    {
+        asyncSlider = new AsyncVersionSlider(-1, x, y, Math.max(width, 110), height);
     }
 
     public Logger getjLogger()

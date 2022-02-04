@@ -7,6 +7,12 @@ import com.viaversion.viaversion.api.data.MappingDataLoader;
 import io.netty.channel.EventLoop;
 import io.netty.channel.local.LocalEventLoopGroup;
 import org.apache.logging.log4j.LogManager;
+import viamcp.gui.AsyncVersionSlider;
+import viamcp.loader.MCPBackwardsLoader;
+import viamcp.loader.MCPViaLoader;
+import viamcp.loader.MCPRewindLoader;
+import viamcp.platform.MCPViaInjector;
+import viamcp.platform.MCPViaPlatform;
 import viamcp.utils.JLoggerToLog4j;
 
 import java.io.File;
@@ -36,6 +42,12 @@ public class ViaMCP
     private int version;
     private String lastServer;
 
+    /**
+     * Version Slider that works Asynchronously with the Version GUI
+     * Please initialize this before usage with initAsyncSlider() or initAsyncSlider(x, y, width (min. 110), height)
+     */
+    public AsyncVersionSlider asyncSlider = new AsyncVersionSlider(-1, Integer.MIN_VALUE / 2, Integer.MIN_VALUE / 2, 0, 0);
+
     public void start()
     {
         ThreadFactory factory = new ThreadFactoryBuilder().setDaemon(true).setNameFormat("ViaMCP-%d").build();
@@ -51,15 +63,25 @@ public class ViaMCP
             this.getjLogger().info("Creating ViaMCP Folder");
         }
 
-        Via.init(ViaManagerImpl.builder().injector(new viamcp.platform.MCPViaInjector()).loader(new viamcp.loader.MCPProviderLoader()).platform(new viamcp.platform.MCPViaPlatform(file)).build());
+        Via.init(ViaManagerImpl.builder().injector(new MCPViaInjector()).loader(new MCPViaLoader()).platform(new MCPViaPlatform(file)).build());
 
         MappingDataLoader.enableMappingsCache();
         ((ViaManagerImpl) Via.getManager()).init();
 
-        new viamcp.loader.MCPBackwardsLoader(file);
-        new viamcp.loader.MCPRewindLoader(file);
+        new MCPBackwardsLoader(file);
+        new MCPRewindLoader(file);
 
         INIT_FUTURE.complete(null);
+    }
+
+    public void initAsyncSlider()
+    {
+        asyncSlider = new AsyncVersionSlider(-1, 5, 5, 110, 20);
+    }
+
+    public void initAsyncSlider(int x, int y, int width, int height)
+    {
+        asyncSlider = new AsyncVersionSlider(-1, x, y, Math.max(width, 110), height);
     }
 
     public Logger getjLogger()

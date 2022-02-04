@@ -75,8 +75,7 @@ public class JLoggerToLog4j extends Logger
 
     public void log(Level level, String msg, Throwable params)
     {
-        if
-        (level == Level.FINE)
+        if (level == Level.FINE)
         {
             this.base.debug(msg, params);
         }
