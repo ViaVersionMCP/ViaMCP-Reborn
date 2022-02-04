@@ -25,6 +25,10 @@ Add this to the main class of your client (aka injection function)
 try
 {
   ViaMCP.getInstance().start();
+  
+  // Only use one of the following
+  ViaMCP.getInstance().initAsyncSlider(); // For top left aligned slider
+  ViaMCP.getInstance().initAsyncSlider(x, y, width (min. 110), height (recommended 20)); // For custom position and size slider
 }
 catch (Exception e)
 {
@@ -35,7 +39,7 @@ catch (Exception e)
 # NetworkManager
 You will need to change 2 functions in NetworkManager.java
 
-1: (Name may vary, but should be func_181124_a or contain (Bootstrap)((Bootstrap)((Bootstrap)(new Bootstrap()).group((EventLoopGroup)lazyloadbase.getValue()))
+1: Name may vary, but should be ``func_181124_a``, ``createNetworkManagerAndConnect`` or contain ``(Bootstrap)((Bootstrap)((Bootstrap)(new Bootstrap()).group((EventLoopGroup)lazyloadbase.getValue())``
 
 After:
 
@@ -62,7 +66,7 @@ if (p_initChannel_1_ instanceof SocketChannel && ViaMCP.getInstance().getVersion
 }
 ```
 
-Which should after look like this (1.8.x for example):
+Which should look like this afterwards (1.8.x for example):
 
 ```java
 p_initChannel_1_.pipeline().addLast((String)"timeout", (ChannelHandler)(new ReadTimeoutHandler(30))).addLast((String)"splitter", (ChannelHandler)(new MessageDeserializer2())).addLast((String)"decoder", (ChannelHandler)(new MessageDeserializer(EnumPacketDirection.CLIENTBOUND))).addLast((String)"prepender", (ChannelHandler)(new MessageSerializer2())).addLast((String)"encoder", (ChannelHandler)(new MessageSerializer(EnumPacketDirection.SERVERBOUND))).addLast((String)"packet_handler", (ChannelHandler)networkmanager);
@@ -107,7 +111,7 @@ You will need to add a button to access the protocol switcher (or alternatively 
 In addSingleplayerMultiplayerButtons() function you will need to add the following code:
 
 ```java
-this.buttonList.add(new GuiButton(69, 5, 5, 90, 20, "Protocol"));
+this.buttonList.add(new GuiButton(69, 5, 5, 90, 20, "Version"));
 ```
 
 In actionPerformed(GuiButton button) function you will need to add the following code:
@@ -123,28 +127,28 @@ if (button.id == 69)
 You can also use a version slider to control ViaMCP versions
 
 ```java
-this.buttonList.add(new VersionSlider(420, x, y, width (min. 110), height));
+this.buttonList.add(ViaMCP.getInstance().asyncSLider);
 ```
 
 # Exporting Without JAR Files
 
 - This should fix most peoples issues with dependencies (usually NoClassDefFoundError or ClassNotFoundException)
 
-1: First export your client normaly
+1: First export your client normally
 
-2: Open your client .jar file with archive program (winrar or 7zip for example)
+2: Open your client .jar file with an archive program (winrar or 7zip for example)
 
-3: Also open all libraries with archive program (ViaBackwards, ViaRewind, ViaSnakeYml and ViaVersion)
+3: Also open all libraries with the selected archive program (ViaBackwards, ViaRewind, ViaSnakeYml and ViaVersion)
 
-4: From ViaBackwards drag and drop to your client .jar folders: ``assets`` and ``com``
+4: From ViaBackwards drag and drop ``assets`` and ``com`` folders to your client .jar
 
-5: From ViaRewind drag ``assets`` and ``de`` folders
+5: From ViaRewind drag and drop ``assets`` and ``de`` folders to your client .jar
 
-6: From ViaSnakeYaml ``org`` folder
+6: From ViaSnakeYaml drag and drop ``org`` folder to your client .jar
 
-7: And from ViaVersion drag and drop ``assets``, ``com`` and ``us`` directories
-
-8: Then save and close, now your client should work good ;)
+7: From ViaVersion drag and drop ``assets``, ``com`` and ``us`` folders to your client .jar
+ 
+8: Then save and close, now your client should be working correctly ;)
 
 Credits: mordolpl (Discord)
 
