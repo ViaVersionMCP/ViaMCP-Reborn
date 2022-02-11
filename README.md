@@ -82,25 +82,17 @@ if (p_initChannel_1_ instanceof SocketChannel && ViaMCP.getInstance().getVersion
 
 2: setCompressionTreshold (Yes, minecraft devs cannot spell 'Threshold') 
 
-Comment out: (Old Decoder)
+Decoder Switch
 
-```java
-this.channel.pipeline().addBefore("decoder", "decompress", new NettyCompressionDecoder(treshold));
-```
-
-Replace with: (New Decoder)
+Comment out ``this.channel.pipeline().addBefore("decoder", "decompress", new NettyCompressionDecoder(treshold));`` and paste in:
 
 ```java
 NettyUtil.decodeEncodePlacement(channel.pipeline(), "decoder", "decompress", new NettyCompressionDecoder(treshold));
 ```
 
-Comment out: (Old Encoder)
+Encoder Switch
 
-```java
-this.channel.pipeline().addBefore("encoder", "compress", new NettyCompressionEncoder(treshold))
-```
-
-Replace with: (New Encoder)
+Comment out ``this.channel.pipeline().addBefore("encoder", "compress", new NettyCompressionEncoder(treshold))`` and paste in:
 
 ```java
 NettyUtil.decodeEncodePlacement(channel.pipeline(), "encoder", "compress", new NettyCompressionEncoder(treshold));
@@ -109,13 +101,13 @@ NettyUtil.decodeEncodePlacement(channel.pipeline(), "encoder", "compress", new N
 # GuiMainMenu
 You will need to add a button to access the protocol switcher (or alternatively use the version slider under this section)
 
-In addSingleplayerMultiplayerButtons() function you will need to add the following code:
+In ``addSingleplayerMultiplayerButtons()`` function add:
 
 ```java
 this.buttonList.add(new GuiButton(69, 5, 5, 90, 20, "Version"));
 ```
 
-In actionPerformed(GuiButton button) function you will need to add the following code:
+In ``actionPerformed()`` function add:
 
 ```java
 if (button.id == 69)
@@ -136,7 +128,7 @@ Replace ``this.thePlayer.swingItem();`` on the 1st line in the if-clause with:
 AttackOrder.sendConditionalSwing(this.objectMouseOver);
 ```
 
-Replace ``this.playerController.attackEntity(this.thePlater, this.objectMouseOver.entityHit)`` with:
+Replace ``this.playerController.attackEntity(this.thePlayer, this.objectMouseOver.entityHit);`` in the switch in case ``ENTITY`` with:
 
 ```java
 AttackOrder.sendFixedAttack(this.thePlayer, this.objectMouseOver.entityHit);
@@ -144,7 +136,17 @@ AttackOrder.sendFixedAttack(this.thePlayer, this.objectMouseOver.entityHit);
 
 1.12.2
 
-TBA
+Replace ``this.player.swingArm(EnumHand.MAIN_HAND);`` at the last line in the if-clause with:
+
+```java
+AttackOrder.sendConditionalSwing(this.objectMouseOver, EnumHand.MAIN_HAND);
+```
+
+Replace ``this.playerController.attackEntity(this.player, this.objectMouseOver.entityHit);`` in the switch in case ``ENTITY`` with:
+
+```java
+AttackOrder.sendFixedAttack(this.thePlayer, this.objectMouseOver.entityHit, EnumHand.MAIN_HAND);
+```
 
 # Version Slider
 You can also use a version slider to control ViaMCP versions
