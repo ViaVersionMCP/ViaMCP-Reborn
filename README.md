@@ -124,6 +124,25 @@ if (button.id == 69)
 }
 ```
 
+# Minecraft (Attack Order Fixes)
+1.8.x
+
+Replace ``this.thePlayer.swingItem();`` on the 1st line in the if-clause with:
+
+```java
+AttackOrder.sendConditionalSwing(this.objectMouseOver);
+```
+
+Replace ``this.playerController.attackEntity(this.thePlater, this.objectMouseOver.entityHit)`` with:
+
+```java
+AttackOrder.sendFixedAttack(this.thePlayer, this.objectMouseOver.entityHit);
+```
+
+1.12.2
+
+TBA
+
 # Version Slider
 You can also use a version slider to control ViaMCP versions
 
