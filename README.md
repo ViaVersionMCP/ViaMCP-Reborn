@@ -125,6 +125,9 @@ if (button.id == 69)
 ```
 
 # Minecraft (Attack Order Fixes)
+
+Function: clickMouse()
+
 1.8.x
 
 Replace ``this.thePlayer.swingItem();`` on the 1st line in the if-clause with:
