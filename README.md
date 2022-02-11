@@ -127,7 +127,7 @@ if (button.id == 69)
 You can also use a version slider to control ViaMCP versions
 
 ```java
-this.buttonList.add(ViaMCP.getInstance().asyncSLider);
+this.buttonList.add(ViaMCP.getInstance().asyncSlider);
 ```
 
 # Exporting Without JAR Files
