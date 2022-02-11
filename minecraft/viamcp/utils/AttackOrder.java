@@ -15,7 +15,7 @@ public class AttackOrder
 
     public static void sendConditionalSwing(MovingObjectPosition mop)
     {
-        if (mop != null && mop.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY)
+        if (mop != null && mop.typeOfHit != MovingObjectPosition.MovingObjectType.ENTITY)
         {
             mc.thePlayer.swingItem();
         }
