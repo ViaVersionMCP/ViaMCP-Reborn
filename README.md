@@ -136,7 +136,7 @@ AttackOrder.sendFixedAttack(this.thePlayer, this.objectMouseOver.entityHit);
 
 1.12.2
 
-Replace ``this.player.swingArm(EnumHand.MAIN_HAND);`` at the last line in the if-clause with:
+Replace ``this.player.swingArm(EnumHand.MAIN_HAND);`` at the last line in the else if-clause with:
 
 ```java
 AttackOrder.sendConditionalSwing(this.objectMouseOver, EnumHand.MAIN_HAND);
