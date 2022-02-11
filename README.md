@@ -134,7 +134,7 @@ this.buttonList.add(ViaMCP.getInstance().asyncSlider);
 # Block Sound Fixes
 Block Placement
 
-Replace all code in ``ItemBlock`` class in the ``onItemUse`` function with:
+Replace all code in ``onItemUse`` function in the ``ItemBlock`` class with:
 
 ```java
 return FixedSoundEngine.onItemUse(this, stack, playerIn, worldIn, pos, side, hitX, hitY, hitZ);
@@ -142,7 +142,7 @@ return FixedSoundEngine.onItemUse(this, stack, playerIn, worldIn, pos, side, hit
 
 Block Breaking
 
-Replace all code in ``World`` class in the ``destroyBlock`` function with:
+Replace all code in ``destroyBlock`` function in the ``World`` class with:
 
 ```java
 return FixedSoundEngine.destroyBlock(this, pos, dropBlock);
