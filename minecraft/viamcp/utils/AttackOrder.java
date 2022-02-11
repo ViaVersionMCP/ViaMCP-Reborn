@@ -25,7 +25,7 @@ public class AttackOrder
     {
         // Using this instead of ViaMCP.PROTOCOL_VERSION so does not need to be changed between 1.8.x and 1.12.2 base
         // getVersion() can be null, but not in this case, as ID 47 exists, if not removed
-        if(ViaMCP.getInstance().getVersion() == ProtocolCollection.getProtocolById(VER_1_8_ID).getVersion())
+        if(ViaMCP.getInstance().getVersion() <= ProtocolCollection.getProtocolById(VER_1_8_ID).getVersion())
         {
             send1_8Attack(entityIn, target);
         }
