@@ -14,9 +14,9 @@ public class AttackOrder
 
     private static final int VER_1_8_ID = 47;
 
-    public static void sendConditionalSwing(RayTraceResult mop, EnumHand enumHand)
+    public static void sendConditionalSwing(RayTraceResult ray, EnumHand enumHand)
     {
-        if (mop != null && mop.typeOfHit != RayTraceResult.Type.ENTITY)
+        if (ray != null && ray.typeOfHit != RayTraceResult.Type.ENTITY)
         {
             mc.player.swingArm(enumHand);
         }
