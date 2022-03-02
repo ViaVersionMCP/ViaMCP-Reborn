@@ -5,7 +5,7 @@ public class ProtocolInfoCollection
     private static final String NO_DESC = "No Description Available";
 
     public static ProtocolInfo R1_18_2 = new ProtocolInfo(
-            "Caves & Cliffs: Part II", NO_DESC, "???"
+            "Caves & Cliffs: Part II", NO_DESC, "February 28, 2022"
     );
 
     public static ProtocolInfo R1_18 = new ProtocolInfo(
