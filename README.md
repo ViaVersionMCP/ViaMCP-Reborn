@@ -119,6 +119,7 @@ if (button.id == 69)
 # Attack Order Fixes
 
 Class: Minecraft.java
+
 Function: clickMouse()
 
 1.8.x
