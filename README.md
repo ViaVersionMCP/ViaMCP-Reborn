@@ -116,8 +116,9 @@ if (button.id == 69)
 }
 ```
 
-# Minecraft (Attack Order Fixes)
+# Attack Order Fixes
 
+Class: Minecraft.java
 Function: clickMouse()
 
 1.8.x
