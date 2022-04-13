@@ -98,10 +98,10 @@ Comment out ``this.channel.pipeline().addBefore("encoder", "compress", new Netty
 NettyUtil.decodeEncodePlacement(channel.pipeline(), "encoder", "compress", new NettyCompressionEncoder(treshold));
 ```
 
-# GuiMainMenu
+# Version Control
 You will need to add a button to access the protocol switcher (or alternatively use the version slider under this section)
 
-In ``addSingleplayerMultiplayerButtons()`` function add:
+In ``addSingleplayerMultiplayerButtons()`` function add (if in GuiMainMenu):
 
 ```java
 this.buttonList.add(new GuiButton(69, 5, 5, 90, 20, "Version"));
@@ -114,6 +114,13 @@ if (button.id == 69)
 {
   this.mc.displayGuiScreen(new GuiProtocolSelector(this));
 }
+```
+
+### Version Slider
+You can also use a version slider to control ViaMCP versions
+
+```java
+this.buttonList.add(ViaMCP.getInstance().asyncSlider);
 ```
 
 # Attack Order Fixes
@@ -148,13 +155,6 @@ Replace ``this.playerController.attackEntity(this.player, this.objectMouseOver.e
 
 ```java
 AttackOrder.sendFixedAttack(this.thePlayer, this.objectMouseOver.entityHit, EnumHand.MAIN_HAND);
-```
-
-# Version Slider
-You can also use a version slider to control ViaMCP versions
-
-```java
-this.buttonList.add(ViaMCP.getInstance().asyncSlider);
 ```
 
 # Block Sound Fixes
