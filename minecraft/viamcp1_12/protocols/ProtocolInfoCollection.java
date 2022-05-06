@@ -4,6 +4,10 @@ public class ProtocolInfoCollection
 {
     private static final String NO_DESC = "No Description Available";
 
+    public static ProtocolInfo R1_19 = new ProtocolInfo(
+            "The Wild Update", NO_DESC, "No Date | In Snapshot (Expected Release: ? ?, 2022)"
+    );
+
     public static ProtocolInfo R1_18_2 = new ProtocolInfo(
             "Caves & Cliffs: Part II", NO_DESC, "February 28, 2022"
     );
