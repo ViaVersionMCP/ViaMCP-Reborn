@@ -9,15 +9,21 @@ I have been requested (held at gun point) to also add credits to ViaForge in the
 # 1.7.x Protocols
 Yes, i know they are not working right now, do not make a pull request to remove them, as i am not going to remove them.
 
-# Small note about version
-If you are using 1.8.x as a client base, use viamcp src folder
-
-If you are using 1.12.2 as a client base, use viamcp1_12 src folder and rename it to viamcp
+# Selecting Version
+Choose the version folder that corresponds with your client version
 
 # Installation
-You will need to add some lines of code before you can use ViaMCP
+Firstly, you will need to add the listed libraries into your dependencies in IntelliJ or Eclipse
 
-You also need to add libraries into dependencies before using this!
+Dependencies (Included inside ``libraries`` folder)
+```
+ViaVersion-[ver].jar > ViaVersion > https://github.com/ViaVersion/ViaVersion
+ViaBackwards-[ver].jar > ViaBackwards > https://github.com/ViaVersion/ViaBackwards
+ViaRewind-[ver].jar > ViaRewind > https://github.com/ViaVersion/ViaRewind
+ViaSnakeYaml-[ver].jar > SnakeYaml > https://bitbucket.org/snakeyaml/snakeyaml
+```
+
+Secondly, you need to add code that allows you to actually use ViaMCP
 
 # Main Class
 Add this to the main class of your client (aka injection function)
