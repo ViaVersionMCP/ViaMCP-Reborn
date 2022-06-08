@@ -3,6 +3,7 @@ Repository to keep up with ViaVersion on MCP (Originally from https://github.com
 
 I have been requested (held at gun point) to also add credits to ViaForge in the README: https://github.com/FlorianMichael/ViaForge
 
+# [(NEW!) Discord Link](https://discord.gg/pBMSy6uVdf)
 # [Exporting without needing ViaMCP in JSON](https://github.com/Foreheadchann/ViaMCP-Reborn#exporting-without-jar-files)
 # [Optional 1.8.x Block Sound Fixes](https://github.com/Foreheadchann/ViaMCP-Reborn#block-sound-fixes)
 
