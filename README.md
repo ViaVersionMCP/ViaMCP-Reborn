@@ -138,30 +138,65 @@ Function: clickMouse()
 
 1.8.x
 
-Replace ``this.thePlayer.swingItem();`` on the 1st line in the if-clause with:
-
+Replace 
 ```java
-AttackOrder.sendConditionalSwing(this.objectMouseOver);
+public void clickMouse() {
+        if (this.leftClickCounter <= 0) {
+            switch (this.objectMouseOver.typeOfHit) {
+                case ENTITY:
+                    this.playerController.attackEntity(this.player, this.objectMouseOver.entityHit);
+                    break;
+
+                case BLOCK:
+                    BlockPos blockpos = this.objectMouseOver.getBlockPos();
+
+                    if (this.world.getBlockState(blockpos).getBlock().getMaterial() != Material.air) {
+                        this.playerController.clickBlock(blockpos, this.objectMouseOver.sideHit);
+                        break;
+                    }
+
+                case MISS:
+                default:
+                    if (this.playerController.isNotCreative()) {
+                        this.leftClickCounter = 10;
+                    }
+            }
+        }
+    }
 ```
 
-Replace ``this.playerController.attackEntity(this.thePlayer, this.objectMouseOver.entityHit);`` in the switch in case ``ENTITY`` with:
-
 ```java
-AttackOrder.sendFixedAttack(this.thePlayer, this.objectMouseOver.entityHit);
-```
+public void clickMouse() {
+        if (this.leftClickCounter <= 0) {
+            boolean oldSwing = ViaMCP.getInstance().getVersion() <= ProtocolCollection.getProtocolById(47).getVersion();
+            if (oldSwing) {
+                this.player.swingItem();
+            }
 
-1.12.2
+            switch (this.objectMouseOver.typeOfHit) {
+                case ENTITY:
+                    this.playerController.attackEntity(this.player, this.objectMouseOver.entityHit);
+                    break;
 
-Replace ``this.player.swingArm(EnumHand.MAIN_HAND);`` at the last line in the else if-clause with:
+                case BLOCK:
+                    BlockPos blockpos = this.objectMouseOver.getBlockPos();
 
-```java
-AttackOrder.sendConditionalSwing(this.objectMouseOver, EnumHand.MAIN_HAND);
-```
+                    if (this.world.getBlockState(blockpos).getBlock().getMaterial() != Material.air) {
+                        this.playerController.clickBlock(blockpos, this.objectMouseOver.sideHit);
+                        break;
+                    }
 
-Replace ``this.playerController.attackEntity(this.player, this.objectMouseOver.entityHit);`` in the switch in case ``ENTITY`` with:
-
-```java
-AttackOrder.sendFixedAttack(this.thePlayer, this.objectMouseOver.entityHit, EnumHand.MAIN_HAND);
+                case MISS:
+                default:
+                    if (this.playerController.isNotCreative()) {
+                        this.leftClickCounter = 10;
+                    }
+            }
+            if (!oldSwing) {
+                this.player.swingItem();
+            }
+        }
+    }
 ```
 
 # Block Sound Fixes
