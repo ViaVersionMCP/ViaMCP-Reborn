@@ -5,6 +5,7 @@ import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 public enum ProtocolCollection
 {
     /* 1.19.x */
+    R_1_19_1(ProtocolVersion.v1_19_1, ProtocolInfoCollection.R1_19_1),
     R_1_19(ProtocolVersion.v1_19, ProtocolInfoCollection.R1_19),
 
     /* 1.18.x */
