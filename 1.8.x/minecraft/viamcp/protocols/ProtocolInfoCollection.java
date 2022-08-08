@@ -4,7 +4,7 @@ public class ProtocolInfoCollection
 {
     private static final String NO_DESC = "No Description Available";
 
-    public static ProtocolInfo R1_19 = new ProtocolInfo(
+    public static ProtocolInfo R1_19_1 = new ProtocolInfo(
             "The Wild Update", NO_DESC, "July 27, 2022 - August 5, 2022"
     );
 
