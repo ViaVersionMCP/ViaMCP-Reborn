@@ -4,8 +4,8 @@ Repository to keep up with ViaVersion on MCP (Originally from https://github.com
 I have been requested (held at gun point) to also add credits to ViaForge in the README: https://github.com/FlorianMichael/ViaForge
 
 # [(CHANGED!) Discord Link - Moved](https://discord.gg/BwWhCHUKDf)
-# [Exporting without needing ViaMCP in JSON](https://github.com/Foreheadchann/ViaMCP-Reborn#exporting-without-jar-files)
-# [Optional 1.8.x Block Sound Fixes](https://github.com/Foreheadchann/ViaMCP-Reborn#block-sound-fixes)
+# [Exporting without needing ViaMCP in JSON](https://github.com/RejectedVia/ViaMCP-Reborn#exporting-without-jar-files)
+# [Optional 1.8.x Block Sound Fixes](https://github.com/RejectedVia/ViaMCP-Reborn#block-sound-fixes)
 
 # 1.7.x Protocols
 Yes, i know they are not working right now, do not make a pull request to remove them, as i am not going to remove them.
