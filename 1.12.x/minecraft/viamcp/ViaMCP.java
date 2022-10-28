@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 public class ViaMCP
 {
-    public final static int PROTOCOL_VERSION = 47;
+    public final static int PROTOCOL_VERSION = 340;
     private static final ViaMCP instance = new ViaMCP();
 
     public static ViaMCP getInstance()
