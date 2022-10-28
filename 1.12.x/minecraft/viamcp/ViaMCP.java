@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 public class ViaMCP
 {
-    public final static int PROTOCOL_VERSION = 340;
+    public final static int PROTOCOL_VERSION = 47;
     private static final ViaMCP instance = new ViaMCP();
 
     public static ViaMCP getInstance()
@@ -44,9 +44,9 @@ public class ViaMCP
 
     /**
      * Version Slider that works Asynchronously with the Version GUI
-     * Please initialize this before usage with initAsyncSlider() or initAsyncSlider(x, y, width (min. 110), height)
+     * Please initialize this before usage, with initAsyncSlider() or initAsyncSlider(x, y, width (min. 110), height)
      */
-    public AsyncVersionSlider asyncSlider = new AsyncVersionSlider(-1, Integer.MIN_VALUE / 2, Integer.MIN_VALUE / 2, 0, 0);
+    public AsyncVersionSlider asyncSlider;
 
     public void start()
     {
@@ -76,7 +76,7 @@ public class ViaMCP
 
     public void initAsyncSlider()
     {
-        asyncSlider = new AsyncVersionSlider(-1, 5, 5, 110, 20);
+        this.initAsyncSlider(5, 5, 110, 20);
     }
 
     public void initAsyncSlider(int x, int y, int width, int height)
