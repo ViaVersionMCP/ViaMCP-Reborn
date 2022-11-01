@@ -1,7 +1,7 @@
 # ViaMCP Reborn
 Client-side version changer for MCP (Originally from https://github.com/LaVache-FR/ViaMCP)
 
-ViaForge Mod: https://github.com/RejectedViaFlorianMichael/ViaForge
+ViaForge Mod: https://github.com/RejectedVia/ViaForge
 
 # [(CHANGED!) Discord Link - Moved](https://discord.gg/BwWhCHUKDf)
 # [Exporting without needing ViaMCP in JSON](https://github.com/RejectedVia/ViaMCP-Reborn#exporting-without-jar-files)
