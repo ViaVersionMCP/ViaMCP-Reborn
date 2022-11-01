@@ -1,7 +1,7 @@
 # ViaMCP Reborn
-Repository to keep up with ViaVersion on MCP (Originally from https://github.com/LaVache-FR/ViaMCP)
+Client-side version changer for MCP (Originally from https://github.com/LaVache-FR/ViaMCP)
 
-I have been requested (held at gun point) to also add credits to ViaForge in the README: https://github.com/FlorianMichael/ViaForge
+ViaForge Mod: https://github.com/RejectedViaFlorianMichael/ViaForge
 
 # [(CHANGED!) Discord Link - Moved](https://discord.gg/BwWhCHUKDf)
 # [Exporting without needing ViaMCP in JSON](https://github.com/RejectedVia/ViaMCP-Reborn#exporting-without-jar-files)
