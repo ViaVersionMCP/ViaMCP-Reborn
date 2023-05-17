@@ -1,4 +1,6 @@
 # ViaMCP Reborn
+# This repository is outdated, click [here](https://github.com/FlorianMichael/ViaMCP) to get to the new one
+
 Client-side version changer for MCP (Originally from https://github.com/LaVache-FR/ViaMCP)
 
 ViaForge Mod: https://github.com/RejectedVia/ViaForge
